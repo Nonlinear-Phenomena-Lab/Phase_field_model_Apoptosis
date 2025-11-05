@@ -49,7 +49,6 @@ def setup_problem(Lx, Ly, Nx, Ny, beta, ebar, alpha, k1, k2, gamma, tau, dealias
     problem.add_equation("ep = (ebar/4.0e-02) + (ebar * np.cos(theta))")
     problem.add_equation("ep_prime = -ebar*np.sin(theta)")
     
-    # No flux BCs
     x0, y0 = 0, 0  # Center of the ellipsoid
     radius = 3.0
     phi['g'] = circle_with_noise(x, y,x0, y0, radius)

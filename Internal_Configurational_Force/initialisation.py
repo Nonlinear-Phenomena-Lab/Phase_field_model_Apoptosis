@@ -1,40 +1,5 @@
 # Code for creating the initial conditions
 import numpy as np
-def ellipsoid(x, y, x0, y0, a, b, interface_width):
-    """
-    Create initial conditions for a phase field model with an ellipsoidal shape interface,
-    with noise introduced only near the interface.
-
-    Parameters:
-    x, y: 2D arrays of x and y coordinates.
-    x0, y0: Center of the ellipsoid.
-    a, b: Semi-axes of the ellipsoid.
-    interface_width: Width of the interface.
-    noise_amplitude: Amplitude of the noise to introduce near the interface.
-
-    Returns:
-    phase_field: 2D array of the phase field values with noise at the interface.
-    """
-    noise_amplitude=0.1
-    x = np.array(x)
-    y = np.array(y)
-    
-    # Ellipsoid equation
-    ellipsoid = ((x - x0) / a)**2 + ((y - y0) / b)**2
-    
-    # Phase field function using sigmoid for smooth transition
-    min_val = 0.0
-    max_val = 1.0
-    #phase = min_val + (max_val - min_val) / (1 + np.exp(np.clip((ellipsoid - 1) / interface_width, -100, 100)))
-
-    # Add noise only in the interface region
-    noise = noise_amplitude * (np.random.rand(*phase.shape) - 0.5)  # Uniform noise in [-noise_amplitude/2, +noise_amplitude/2]
-    phase = phase * (phase-1) * noise
-    
-    # Ensure the phase field stays within [0, 1]
-    phase = np.clip(phase, min_val, max_val)
-    
-    return phase
 
 def circle(x, y, x0, y0, radius):
     """
