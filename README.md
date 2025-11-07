@@ -1,5 +1,5 @@
-# Apoptosis_Phase_field_model
-This repository holds the necessary Python code to generate the results from the publication that relates to this repository. The code is split into two separate files 1. contains the model for simulating apoptosis. 2. additional equations for internal configurational mechanics.
+# Phase-field-Apoptosis
+This repository holds the necessary Python code to generate the results from the publication that relates to this repository. The code is split into two separate files 1. Contains the model for simulating apoptosis. 2. Additional equations for internal configurational mechanics.
 
 ## File structure:
 * ### Model:
